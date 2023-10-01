@@ -19,7 +19,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 ### Bhanuka Bandara Ekanayake 
 
-<img src="images/bhanuka.png" width="200px">
+<img src="images/bhnuka.png" width="200px">
 
 [[github](http://github.com/bhnuka)]
 
