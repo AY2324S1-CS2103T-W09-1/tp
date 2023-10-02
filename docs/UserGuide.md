@@ -3,10 +3,10 @@ layout: page
 title: User Guide
 ---
 
-FApro seeks to improve the quality of life of financial advisors (FAs). It allows FAs to **keep track of large numbers of contacts**. It allows FAs to have a one-stop platform to manage their contacts and conduct financial analytics while providing a big-picture view of their clientele as a whole.
+AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps.
 
 * Table of Contents
-{:toc}
+  {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -25,15 +25,15 @@ FApro seeks to improve the quality of life of financial advisors (FAs). It allow
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com o/Barber a/John Street, Block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
+    * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list.
+    * `delete 3` : Deletes the 3rd contact shown in the current list.
 
-   * `clear` : Deletes all contacts.
+    * `clear` : Deletes all contacts.
 
-   * `exit` : Exits the app.
+    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
 
@@ -74,38 +74,17 @@ Format: `help`
 
 ### Adding a person: `add`
 
-Adds a new entry to their address book for financial advisors, including personal details such as name, address, occupation, phone number and email.
+Adds a person to the address book.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL o/OCCUPATION a/ADDRESS [t/TAG]…​`
-
-Acceptable values for each parameter:
-* Name: Valid string name.
-* Address: Valid string address. Contains postal code. (8 College Ave West, Singapore 138608).
-* Phone number: Valid string and phone number format (+65 8123 4567).
-* Email address: Valid string and email address format (johnd@example.com).
-* Occupation: Valid string occupation.
-* Tag: Valid string.
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A person can have any number of tags (including 0)
 </div>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com o/Barber a/John Street, Block 123, #01-01`
-* `add n/Betsy Crowe t/Friend e/betsycrowe@example.com o/Entrepreneur a/Newgate Prison p/1234567 t/Criminal`
-
-![edit format](images/addformat.png)
-
-Precise expected outputs on success:
-* Successful addition message. ‘John Doe has been added to your client list’
-* The new entry is displayed in the address book GUI.
-
-![edit format](images/addresult.png)
-
-Precise expected outputs on failure:
-* If a required parameter is missing (e.g., name, email), an error message should specify which parameter is missing.
-* If a parameter is provided in an invalid format (e.g., an invalid email address), an error message should indicate the invalid format.
-* If a parameter is specified multiple times (e.g., --name John --name Doe), an error should indicate that the parameter can only be specified once.
+* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
+* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
 
 ### Listing all persons : `list`
 
@@ -115,7 +94,7 @@ Format: `list`
 
 ### Editing a person : `edit`
 
-Edits an existing client's parameter in FAPro.
+Edits an existing person in the address book.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
@@ -124,30 +103,15 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 * Existing values will be updated to the input values.
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
 * You can remove all the person’s tags by typing `t/` without
-    specifying any tags after it.
+  specifying any tags after it.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-![edit format](images/editformat.png)
-
-* Precise expected outputs on success:
-* Successful addition message. ‘Edited Person:[NAME], Phone Number:[PHONE_NUMBER], Email:[EMAIL], Occupation:[OCCUPATION], Address:[ADDRESS]…’
-* The new entry is displayed in the address book GUI.
-
-![edit format](images/editresult.png)
-
-Precise expected outputs on failure:
-* If a required parameter is missing (e.g., name, email), an error message should specify which parameter is missing.
-* If a parameter is provided in an invalid format (e.g., an invalid email address), an error message should indicate the invalid format.
-* If a parameter is specified multiple times (e.g., --name John --name Doe), an error should indicate that the parameter can only be specified once.
-
-
-
 ### Locating persons by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+Finds a person based on the given keyword.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -159,9 +123,8 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find Jackson` returns `jackson` and `Jackson Doe`
+* `find Jane` returns `Jane Yeoh`, `Jane Li`<br>
 
 ### Deleting a person : `delete`
 
