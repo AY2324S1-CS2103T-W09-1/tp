@@ -28,7 +28,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 ### Daphne Shaine Wilhelmina
 
-<img src="images/daphne.png" width="200px">
+<img src="images/daphne789.png" width="200px">
 
 [[github](http://github.com/Daphne789)] 
 
