@@ -17,7 +17,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 * Role: Project Advisor
 
-### Bhanuka Bandara Ekanayake 
+### Bhanuka Bandara Ekanayake
 
 <img src="images/bhnuka.png" width="200px">
 
@@ -30,7 +30,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 <img src="images/daphne.png" width="200px">
 
-[[github](http://github.com/Daphne789)] 
+[[github](http://github.com/Daphne789)]
 
 * Role: Developer
 * Responsibilities: Data
