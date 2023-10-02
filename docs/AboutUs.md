@@ -19,7 +19,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 ### Bhanuka Bandara Ekanayake 
 
-<img src="images/bhanuka.png" width="200px">
+<img src="images/bhnuka.png" width="200px">
 
 [[github](http://github.com/bhnuka)]
 
@@ -37,7 +37,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 ### Glenn Ng Jun Jie
 
-<img src="images/glenn.png" width="200px">
+<img src="images/glenngnng.png" width="200px">
 
 [[github](http://github.com/glenngnng)]
 
@@ -46,7 +46,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 ### Lim Zhen Wy
 
-<img src="images/wy.png" width="200px">
+<img src="images/limzhenwy.png" width="200px">
 
 [[github](http://github.com/limzhenwy)]
 
@@ -55,7 +55,7 @@ You can reach us at the email `syamfarh@comp.nus.edu.sg`
 
 ### Muhammad Syam Farhan bin Agus Rizal
 
-<img src="images/syam.png" width="200px">
+<img src="images/syamfarh.png" width="200px">
 
 [[github](http://github.com/syamfarh)]
 
