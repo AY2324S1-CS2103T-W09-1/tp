@@ -42,7 +42,6 @@ public class RemarkCommand extends Command {
         this.index = index;
         this.remark = remark;
     }
-    public static final String MESSAGE_NOT_IMPLEMENTED_YET = "Remark command not implemented yet";
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
