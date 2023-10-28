@@ -170,4 +170,14 @@ public interface Model {
      * from the editedPersons ArrayList.
      */
     void removeEditedPersonsPair();
+
+    void storeAddedPerson(Person addedPerson);
+
+    Person getAddedPerson();
+
+    void removeAddedPerson();
+
+    int getAddedPersonsSize();
+
+
 }

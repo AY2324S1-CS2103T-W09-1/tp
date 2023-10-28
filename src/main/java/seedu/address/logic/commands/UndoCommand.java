@@ -3,7 +3,6 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -96,12 +95,16 @@ public class UndoCommand extends Command {
      */
     public CommandResult executeUndoAdd(Model model) {
 
+        /**
         List<Person> lastShownList = model.getFilteredPersonList();
         int lastIndex = model.getAddressBookSize() - 1;
         Person personToDelete = lastShownList.get(lastIndex);
-        model.deletePerson(personToDelete);
+         **/
 
-        return new CommandResult(String.format(MESSAGE_UNDO_ADD_SUCCESS, Messages.format(personToDelete)));
+        Person addedPerson = model.getAddedPerson();
+        model.deletePerson(addedPerson);
+        model.removePreviousUndoableCommand();
+        return new CommandResult(String.format(MESSAGE_UNDO_ADD_SUCCESS, Messages.format(addedPerson)));
     }
 
     /**

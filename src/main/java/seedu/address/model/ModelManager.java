@@ -29,6 +29,7 @@ public class ModelManager implements Model {
     private final FilteredList<Person> filteredPersons;
     private final ArrayList<Person> deletedPersons;
     private final ArrayList<Pair<Person, Person>> editedPersons;
+    private final ArrayList<Person> addedPersons;
     private ArrayList<String> previousUndoableCommands;
     private Comparator<Person> sortComparator;
 
@@ -45,6 +46,7 @@ public class ModelManager implements Model {
         filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
         deletedPersons = new ArrayList<>();
         editedPersons = new ArrayList<>();
+        addedPersons = new ArrayList<>();
         previousUndoableCommands = new ArrayList<>();
         sortComparator = APPTCOMPARATOR;
     }
@@ -107,6 +109,23 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void storeAddedPerson(Person addedPerson) {
+        addedPersons.add(addedPerson);
+    }
+
+    @Override
+    public Person getAddedPerson() {
+        int lastIndex = this.addedPersons.size() - 1;
+        return this.addedPersons.get(lastIndex);
+    }
+
+    @Override
+    public void removeAddedPerson() {
+        int lastIndex = this.addedPersons.size() - 1;
+        this.addedPersons.remove(lastIndex);
+    }
+
+    @Override
     public void storeEditedPersonsPair(Person editedPerson, Person originalPerson) {
         Pair<Person, Person> toStore = new Pair<>(editedPerson, originalPerson);
         editedPersons.add(toStore);
@@ -122,6 +141,11 @@ public class ModelManager implements Model {
     public void removeEditedPersonsPair() {
         int lastIndex = editedPersons.size() - 1;
         editedPersons.remove(lastIndex);
+    }
+
+    @Override
+    public int getAddedPersonsSize() {
+        return this.addedPersons.size();
     }
 
 
@@ -188,6 +212,7 @@ public class ModelManager implements Model {
     @Override
     public void addPerson(Person person) {
         addressBook.addPerson(person);
+        storeAddedPerson(person);
         updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
     }
 
